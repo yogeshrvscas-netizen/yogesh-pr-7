@@ -1,0 +1,52 @@
+name: HTML5 Layout Autograding
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+
+jobs:
+  autograding:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Test 1 - Header
+        run: npx jest -t "Header exists"
+
+      - name: Test 2 - Navigation
+        run: npx jest -t "Navigation exists"
+
+      - name: Test 3 - Section
+        run: npx jest -t "Section exists"
+
+      - name: Test 4 - Aside
+        run: npx jest -t "Aside exists"
+
+      - name: Test 5 - Footer
+        run: npx jest -t "Footer exists"
+
+      - name: Test 6 - Navigation Links
+        run: npx jest -t "Navigation contains four links"
+
+      - name: Test 7 - Page Heading
+        run: npx jest -t "Page heading exists"
+
+      - name: Test 8 - Aside Heading
+        run: npx jest -t "Aside heading exists"
+
+      - name: Test 9 - Footer Copyright
+        run: npx jest -t "Footer copyright exists"
+
+      - name: Test 10 - CSS Float Layout
+        run: npx jest -t "CSS contains float layout"
