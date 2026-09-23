@@ -1,21 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Layout Styles with Aside</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout with Aside</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-<style>
+        body {
+            font-family: Arial, sans-serif;
+        }
 
-/* Write your CSS here */
+        header {
+            background: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
 
-</style>
+        .container {
+            display: flex;
+            min-height: 400px;
+        }
 
+        aside {
+            width: 25%;
+            background: #f4f4f4;
+            padding: 20px;
+        }
+
+        main {
+            width: 75%;
+            background: #ffffff;
+            padding: 20px;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+
+        /* Responsive layout */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            aside,
+            main {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
-
 <body>
 
-<!-- Write your HTML code here -->
+    <header>
+        <h1>My Website Layout</h1>
+    </header>
+
+    <div class="container">
+        <aside>
+            <h2>Sidebar</h2>
+            <p>This is the aside section for links or additional information.</p>
+        </aside>
+
+        <main>
+            <h2>Main Content</h2>
+            <p>This is the main content area of the webpage.</p>
+            <p>You can change the layout by modifying the CSS styles.</p>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 My Website</p>
+    </footer>
 
 </body>
 </html>
